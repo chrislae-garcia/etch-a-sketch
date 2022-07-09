@@ -17,4 +17,5 @@
   display: flex;
   flex: 1 1 auto;
   align-items: stretch;
+  background-color: rgb(177, 177, 177);
 }
