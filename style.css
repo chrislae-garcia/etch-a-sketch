@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 5em 10em;
+  height: 500px;
+}
+
+.row {
+  display: flex;
+  flex: 1 1 auto;
+  gap: 1px;
+  justify-content: stretch;
+}
+
+.col {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: stretch;
+  background-color: red;
+}
