@@ -6,8 +6,12 @@ const btnEditGrid = document.getElementById('btn-edit-grid');
 function promptGrid() {
   let gridSize = prompt('Set new grid size:');
 
-  if (gridSize > 100) alert('Grid size cannot exceed 100');
-  createGrid(gridSize);
+  if (gridSize > 0 && gridSize <= 100) {
+    createGrid(gridSize);  
+  } else {
+    alert('Please input a number between 1 to 100');
+  }
+  
 }
 
 btnEditGrid.addEventListener('click', promptGrid);
