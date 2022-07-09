@@ -1,22 +1,32 @@
 const divContainer = document.querySelector('.container');
 console.log(divContainer);
 
-for (let row = 0; row < 16; row++) {
+for (let row = 0; row < 100; row++) {
   const divSquareRow = document.createElement('div');
   divSquareRow.classList.add('row');
   divContainer.appendChild(divSquareRow);
-  for (let col = 0; col < 16; col++) {
+  for (let col = 0; col < 100; col++) {
     const divSquareCol = document.createElement('div');
     divSquareCol.classList.add('col');
     divSquareRow.appendChild(divSquareCol);
   }
 }
 
-function fillBox(e) {
-  console.log(e);
-  e.target.style.backgroundColor = 'blue';
+let isDrawing = false;
+// color the pixel box on mouse click
+window.addEventListener('mousedown', function(fillBox) {
+  if (fillBox.target.className != 'col') return; 
+  fillBox.target.style.backgroundColor = 'blue';
+  isDrawing = true;
+});
 
-}
+// color the pixel boxes on mouse hold
+window.addEventListener('mouseover', function(fillBox) {
+  if (fillBox.target.className != 'col') return;
+  if (isDrawing) fillBox.target.style.backgroundColor = 'blue';
+});
 
-const boxes = document.querySelectorAll('.col');
-boxes.forEach(box => box.addEventListener('mousedown', fillBox));
+// stop coloring the pixel boxes when mouse hold is released
+window.addEventListener('mouseup', e => {
+  if (isDrawing) isDrawing = false;
+});
