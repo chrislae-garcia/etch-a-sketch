@@ -1,6 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(39, 39, 39);
+  color:rgb(177, 177, 177)
+}
+
 .container {
   display: flex;
   flex-direction: column;
+  margin-top: 2em;
   gap: 1px;
   width: 640px;
   height: 640px;
