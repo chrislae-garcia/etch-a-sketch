@@ -11,3 +11,8 @@ for(let row = 0; row < 16; row++) {
     divSquareRow.appendChild(divSquareCol);
   }
 }
+
+window.addEventListener('mouseover', function(hoveredBox) {
+  if(hoveredBox.target.className!='col') return;
+  hoveredBox.target.style.backgroundColor = 'blue';  
+});
