@@ -1,8 +1,19 @@
 const divContainer = document.querySelector('.container');
 console.log(divContainer);
 
-function createGrid(grid) {
-  for (let row = 0; row < grid; row++) {
+const btnEditGrid = document.getElementById('btn-edit-grid');
+
+function promptGrid() {
+  let gridSize = prompt('Set new grid size:');
+
+  if (gridSize > 100) alert('Grid size cannot exceed 100');
+  createGrid(gridSize);
+}
+
+btnEditGrid.addEventListener('click', promptGrid);
+
+function createGrid(grid=16) {
+    for (let row = 0; row < grid; row++) {
     const divSquareRow = document.createElement('div');
     divSquareRow.classList.add('row');
     divContainer.appendChild(divSquareRow);
