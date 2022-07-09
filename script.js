@@ -1,14 +1,16 @@
 const divContainer = document.querySelector('.container');
 console.log(divContainer);
 
-for (let row = 0; row < 100; row++) {
-  const divSquareRow = document.createElement('div');
-  divSquareRow.classList.add('row');
-  divContainer.appendChild(divSquareRow);
-  for (let col = 0; col < 100; col++) {
-    const divSquareCol = document.createElement('div');
-    divSquareCol.classList.add('col');
-    divSquareRow.appendChild(divSquareCol);
+function createGrid(grid) {
+  for (let row = 0; row < grid; row++) {
+    const divSquareRow = document.createElement('div');
+    divSquareRow.classList.add('row');
+    divContainer.appendChild(divSquareRow);
+    for (let col = 0; col < grid; col++) {
+      const divSquareCol = document.createElement('div');
+      divSquareCol.classList.add('col');
+      divSquareRow.appendChild(divSquareCol);
+    }
   }
 }
 
