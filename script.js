@@ -43,3 +43,5 @@ window.addEventListener('mouseover', function(fillBox) {
 window.addEventListener('mouseup', e => {
   if (isDrawing) isDrawing = false;
 });
+
+createGrid();
