@@ -12,6 +12,10 @@ function promptGrid() {
 
 btnEditGrid.addEventListener('click', promptGrid);
 
+function clearGrid() {
+  
+}
+
 function createGrid(grid=16) {
     for (let row = 0; row < grid; row++) {
     const divSquareRow = document.createElement('div');
